@@ -1,15 +1,24 @@
-## Project HSF
+# Project HSF
 
 Project HSF is a framework to help simplifies API integration by eliminating the need for manual client generation and JSON response parsing.
 
-## 1. Api Interface:
+## 1. Dependency
+```
+<dependency>
+    <groupId>io.github.projecthsf</groupId>
+    <artifactId>spring-hsf</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+## 2. How to use
+### a. Api Interface:
 ```
 public interface CustomerApi {
     int getCount(int groupId);
 }
 ```
 
-## 2. Api Provider (Server):
+### b. Api Provider (Server):
 ```
 @HsfProvider
 public class CustomerApiImpl implements CustomerApi {
@@ -20,9 +29,9 @@ public class CustomerApiImpl implements CustomerApi {
 }
 ```
 
-## 3. Api Consumer (Client):
+### c. Api Consumer (Client):
 
-### a. Config bean:
+#### - Config bean:
 ```
 @Configuration
 public class HsfConsumerConfig {
@@ -30,7 +39,7 @@ public class HsfConsumerConfig {
     private CustomerApi customerApi;
 }
 ```
-### b. And use from controllers/services:
+#### - And use from controllers/services:
 ```
 @RestController
 @RequiredArgsConstructor
