@@ -2,6 +2,8 @@
 
 Project HSF is a framework to help simplifies API integration by eliminating the need for manual client generation and JSON response parsing.
 
+[HSF Demo](https://github.com/projecthsf/spring-hsf-demo)
+
 Documents:
 
 [HSF Overview](https://github.com/projecthsf/spring-hsf/blob/main/docs/overview.md)
