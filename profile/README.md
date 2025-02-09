@@ -3,7 +3,7 @@
 Project HSF is a framework to help simplifies API integration by eliminating the need for manual client generation and JSON response parsing.
 
 ## 1. Dependency
-```
+```xml
 <dependency>
     <groupId>io.github.projecthsf</groupId>
     <artifactId>spring-hsf</artifactId>
@@ -12,14 +12,14 @@ Project HSF is a framework to help simplifies API integration by eliminating the
 ```
 ## 2. How to use
 ### a. Api Interface:
-```
+```java
 public interface CustomerApi {
     int getCount(int groupId);
 }
 ```
 
 ### b. Api Provider (Server):
-```
+```java
 @HsfProvider
 public class CustomerApiImpl implements CustomerApi {
     @Override
@@ -32,7 +32,7 @@ public class CustomerApiImpl implements CustomerApi {
 ### c. Api Consumer (Client):
 
 #### - Config bean:
-```
+```java
 @Configuration
 public class HsfConsumerConfig {
     @HsfConsumer
@@ -40,7 +40,7 @@ public class HsfConsumerConfig {
 }
 ```
 #### - And use from controllers/services:
-```
+```java
 @RestController
 @RequiredArgsConstructor
 public class CustomerController {
